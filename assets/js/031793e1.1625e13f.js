@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblackstar_universe=self.webpackChunkblackstar_universe||[]).push([[1633],{2511:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/blog/tags/facebook","allTagsPath":"/blog/tags","count":1}')}}]);

@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '黑星的小宇宙',
-  tagline: '一名物联网技术架构师和大数据工程师',
+  tagline: '一名物联网技术工程师和大数据工程师',
   url: 'https://blackstar-baba.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -17,14 +17,14 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'blackstar-baba', // Usually your GitHub org/user name.
-  projectName: 'blackstar-universe', // Usually your repo name.
+  projectName: 'universe', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -69,7 +69,12 @@ const config = {
           {
             to: '/video',
             label: '🎞视频',
-            position: 'left'
+            position: 'left',
+          },
+          {
+            to: '/util',
+            label: '🛠工具',
+            position: 'left',
           },
           {
             href: 'https://github.com/blackstar-baba',

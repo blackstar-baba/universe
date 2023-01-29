@@ -1,6 +1,11 @@
 ## description
 
-Cache miss
+观察Cache miss（缓存缺失现象）
+
+- 对于处理并行任务的应用程序，如果生产者和消费者之间的共享内存超过 ~8MB，由于缓存未命中效应，它可能会影响应用程序的性能。
+- 对于规则引擎这样的用例，可能会发生这种情况： 所有传入的请求都根据预定义的规则进行验证，并且这些规则会随着时间的推移而增长，超过 8 MB 的限制。
+- 当线程之间的共享内存超过 ~8 MB 时，用单线程处理内存中的任务比用多线程处理任务有更好的性能。
+- 大小（~8 MB）可以根据处理器改变
 
 ```
 public class CacheMiss {
@@ -12,13 +17,14 @@ public class CacheMiss {
 			intList.add(i);
 		}
 		System.out.println("Main Thread : " + Thread.currentThread().getName());
-
+		// 在同一个线程中执行随机操作
 		doSomeRandomOperationInList(intList);
 		doSomeRandomOperationInList(intList);
 		doSomeRandomOperationInList(intList);
 		doSomeRandomOperationInList(intList);
 		doSomeRandomOperationInList(intList);
-
+		
+		//在不同线程中执行随机操作
 		runAsync(intList, 1);
 		runAsync(intList, 2);
 		runAsync(intList, 3);

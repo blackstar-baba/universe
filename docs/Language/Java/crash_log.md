@@ -1,6 +1,6 @@
 ## description
 
-how to read error file
+怎么读错误文件
 
 ## link
 

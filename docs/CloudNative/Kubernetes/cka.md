@@ -1,7 +1,7 @@
 ## description
 
-see link
-
+记录cka考试的一些资料。
+ 
 
 
 ## link

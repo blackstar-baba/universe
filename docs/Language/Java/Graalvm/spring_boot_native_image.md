@@ -23,8 +23,20 @@ java.lang.IllegalArgumentException: Could not find class [com.cib.roc.RocApplica
 ```
 原因是只有使用profile native 进行compile时才会生成。
 
+```
+2023-02-11 21:09:47,646 [main] WARN  o.s.c.s.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultTbApiUsageReportClient': Could not find an init method named 'org.thingsboard.server.queue.usagestats.DefaultTbApiUsageReportClient.init' on bean with name 'defaultTbApiUsageReportClient'
+2023-02-11 21:09:47,646 [main] INFO  o.t.s.t.mqtt.MqttTransportService - Stopping MQTT transport!
+2023-02-11 21:09:47,646 [main] INFO  o.t.s.t.mqtt.MqttTransportService - MQTT transport stopped!
+2023-02-11 21:09:47,647 [main] ERROR o.s.boot.SpringApplication - Application run failed
+```
+可能原因是初始化方法是私有的，改成public即可
+```
+// private change to public
+@PostConstruct
+private void init() {
+```
 
-- 编译过程中提升找不到
+- 没有使用的静态变量需要移除
  
 ## 链接
 - spring-boot native-image https://docs.spring.io/spring-boot/docs/3.0.2/reference/html/native-image.html#native-image.developing-your-first-application.native-build-tools

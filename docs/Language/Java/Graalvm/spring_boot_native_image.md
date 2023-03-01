@@ -41,5 +41,6 @@ private void init() {
 ## 链接
 - spring-boot native-image https://docs.spring.io/spring-boot/docs/3.0.2/reference/html/native-image.html#native-image.developing-your-first-application.native-build-tools
 
+- 多版本native build 问题 https://github.com/spring-projects/spring-boot/issues/33184
 
 
